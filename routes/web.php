@@ -1,14 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaintingsController;
 use Inertia\Inertia;
 
-Route::get('/cuadros', function () {
-    return inertia('Paintings');
-});
-
 Route::get('/', function () {
-    return inertia('Welcome');
+    return Inertia::render('Home', [
+        'name' => 'Jonathan',
+        'frameworks' => ['Laravel', 'Vue', 'Inertia'],
+    ]);
 });
 
+Route::get('/users', function () {
+    return Inertia::render('Users');
+});
+
+Route::get('/cuadros', function () {
+    return Inertia::render('Paintings');
+});
+
+Route::get('/setting', function () {
+    return Inertia::render('Setting');
+});
