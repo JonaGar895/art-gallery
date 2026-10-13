@@ -11,7 +11,9 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return Inertia::render('Users');
+    return Inertia::render('Users', [
+        'time' => now() ->toTimeString()
+    ]);
 });
 
 Route::get('/cuadros', function () {
@@ -20,4 +22,8 @@ Route::get('/cuadros', function () {
 
 Route::get('/setting', function () {
     return Inertia::render('Setting');
+});
+
+Route::post('/logout', function () {
+    dd(request('foo'));
 });

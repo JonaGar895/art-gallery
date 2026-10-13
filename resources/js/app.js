@@ -1,4 +1,5 @@
 import './bootstrap';
+import '../css/app.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -10,6 +11,14 @@ createInertiaApp({
             `./Pages/${name}.vue`,
             import.meta.glob('./Pages/**/*.vue')
         ),
+
+        
+    progress: {
+    delay: 0,
+    color: '#ff0000',
+    includeCSS: true,
+    showSpinner: true,
+    },
 
     setup({ el, App, props, plugin }) {
         createApp({
