@@ -13,9 +13,9 @@
 
             <li>
                 <Link
-                    href="/users$foo=bar&baz=buzz"
+                    href="/users?foo=bar&baz=buzz"
                     class="text-blue-500 hover:underline"
-                    :class="{ 'font-bold underline': $page.component =='users'}"
+                    :class="{ 'font-bold underline': $page.component === 'Users' }"
                 >
                     Users
                 </Link>
@@ -25,7 +25,7 @@
                 <Link
                     href="/setting"
                     class="text-blue-500 hover:underline"
-                    :class="{ 'font-bold underline': $page.component== 'setting' }"
+                    :class="{ 'font-bold underline': $page.component === 'Setting' }"
                 >
                     Setting
                 </Link>
@@ -45,11 +45,12 @@
     </nav>
 </template>
 
-
-<script >
+<script>
 import { Link } from '@inertiajs/vue3';
 
 export default {
-    components: {Link}
-}
+    components: {
+        Link,
+    },
+};
 </script>
